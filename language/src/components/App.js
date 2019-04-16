@@ -1,8 +1,14 @@
 import React from 'react';
 
+class App extends React.Component {
 
-const App = () => {
-  return <div>App</div>
+  render() {
+    return (
+      <div className="ui container">
+        App
+      </div>
+    )
+ }
 }
 
 export default App;
