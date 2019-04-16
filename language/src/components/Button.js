@@ -3,7 +3,9 @@ import React from 'react';
 const Button = () => {
 
   return (
-    <div>Button</div>
+    <button className="ui primary button">
+      Submit
+    </button>
   )
 };
 

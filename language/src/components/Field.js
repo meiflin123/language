@@ -1,10 +1,17 @@
 import React from 'react';
 
-const Field = () => {
+class Field extends React.Component {
 
-  return (
-    <div>Field</div>
-  )
+  render() {
+    return (
+      <div className="ui form">
+        <div className="ui field">
+          <label>Name</label>
+          <input />
+        </div>
+      </div>
+    )
+ }
 };
 
 export default Field;
