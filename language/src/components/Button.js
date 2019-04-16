@@ -1,5 +1,6 @@
 import React from 'react';
-import LanguageContext from '../contexts/LanguageContext'
+import LanguageContext from '../contexts/LanguageContext';
+import ColorContext from '../contexts/ColorContext';
 
 class Button extends React.Component {
   // two ways to get data out of context obj
@@ -18,14 +19,23 @@ class Button extends React.Component {
     return language === 'English'? 'Submit' : '提交'
 
   }
-  render () {
+
+  renderButton = color => {
     return (
-      <button className="ui primary button">
+      <button className= {`ui ${color} button`}>
         {/*this.onSelectLanguage()*/}
         <LanguageContext.Consumer>
           {value => this.onSelectLanguage(value)}
         </LanguageContext.Consumer>
       </button>
+    );
+  }
+  
+  render () {
+    return (
+      <ColorContext.Consumer>
+        { color => this.renderButton(color)}
+      </ColorContext.Consumer>
     )
   }
   
