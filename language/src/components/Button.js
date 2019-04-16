@@ -1,12 +1,21 @@
 import React from 'react';
+import LanguageContext from '../contexts/LanguageContext'
 
-const Button = () => {
+class Button extends React.Component {
+  
+  static contextType = LanguageContext;
 
-  return (
-    <button className="ui primary button">
-      Submit
-    </button>
+  onSelectLanguage = () => {
+    return this.context === 'English'? 'Submit' : '提交'
+  }
+  render () {
+    return (
+      <button className="ui primary button">
+       {this.onSelectLanguage()}
+      </button>
   )
+  }
+  
 };
 
 export default Button;
